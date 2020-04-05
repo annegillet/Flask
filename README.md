@@ -26,4 +26,4 @@ pip install -r requirements.txt
 
 ### Installing
 
-Then, run the app.py on your code editor and a web page will appear.
+Then, run app.py on your code editor and a web page will appear.
