@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title> Application Flask</title>
+        <link rel = "stylesheet" type = "text/css" href="{{ url_for ('static', filename = 'base.css') }}" >
+        <link rel="stylesheet" href="{{ url_for ('static', filename = '4d8aacec-1581436706.min.css') }}" type="text/css">
+
+        <body>
+        <h1> Allô le monde ! </h1>
+
+        <div class="onglets_html">
+            <div class="onglets">
+                <div class="onglet_y onglet"><a href="{{ url_for('home') }}">SQL</a></div>
+                <div class="onglet_n onglet"><a href="{{ url_for('inscrits') }}">Inscrits</a></div>
+                <div class="onglet_n onglet"><a href="{{ url_for('load') }}">Téléchargement</a></div>
+                <div class="onglet_n onglet"><a href="{{ url_for('mnist') }}">MNIST</a></div>
+            </div>
+            <div class="contenu"> 
+			
+				<div class="block-title">
+			<h2>Tu peux rentrer tes coordonnées dans une base de données SQL </h2>
+		</div>
+
+			<form action="#" method="POST">
+			
+			<div class="messages"></div>
+
+			<div class="controls two-columns">
+				<div class="fields clearfix">
+					<div class="left-column">
+						<div class="form-group form-group-with-icon">
+							<input id="form_name" type="text" name="nom" class="form-control" placeholder="Nom" required="required" data-error="Nom requis">
+							<div class="form-control-border"></div>
+							<div class="help-block with-errors"></div>
+						</div>
+		
+						<div class="form-group form-group-with-icon">
+							<input id="form_name" type="text" name="prenom" class="form-control" placeholder="Prénom" required="required" data-error="Prénom requis">
+							<div class="form-control-border"></div>
+							<div class="help-block with-errors"></div>
+						</div>
+		
+						<div class="form-group form-group-with-icon">
+							<select id="form_name" type="text" name="sexe" class="form-control" placeholder="Sexe" size = "1" required="required" data-error="Sexe requis">
+							  <option> Féminin
+							  <option> Masculin
+							</select> 
+							<div class="form-control-border"></div>
+							<div class="help-block with-errors"></div>
+						</div>
+					</div>
+					<div class="right-column">
+						<div class="form-group form-group-with-icon">
+							<textarea id="form_message" name="pseudo" class="form-control" placeholder="Pseudo" rows="1" required="required" data-error="Veuillez laisser un pseudo, merci."></textarea>
+							<div class="form-control-border"></div>
+							<div class="help-block with-errors"></div>
+						</div>
+					</div>
+				</div>
+				
+		<button type="submit">Envoyer</button>
+	</div>
+</form>
+            </div>
+        </div>
+
+  
+<footer class="site-footer clearfix">
+	<div class="footer-copyrights">
+        <p><a href="{{ url_for('inscrits') }}">Regarde les noms des inscrits sur cette base de données</a></p>
+        <p><a href="{{ url_for('home') }}">Retour à l'accueil</a></p>
+    </div>
+</footer>
+        
+
+        </body>
+    </head>
+</html>

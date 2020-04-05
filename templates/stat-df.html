@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title> Application Flask</title>
+        <link rel = "stylesheet" type = "text/css" href="{{ url_for ('static', filename = 'base.css') }}" >
+        <link rel="stylesheet" href="{{ url_for ('static', filename = '4d8aacec-1581436706.min.css') }}" type="text/css">
+
+        <body>
+        <h1> Allô le monde ! </h1>
+
+        <div class="onglets_html">
+            <div class="onglets">
+                <div class="onglet_n onglet"><a href="{{ url_for('home') }}">SQL</a></div>
+                <div class="onglet_n onglet"><a href="{{ url_for('inscrits') }}">Inscrits</a></div>
+                <div class="onglet_y onglet"><a href="{{ url_for('load') }}">Téléchargement</a></div>
+                <div class="onglet_n onglet"><a href="{{ url_for('mnist') }}">MNIST</a></div>
+            </div>
+            <div class="contenu"> 
+
+            <div class="block-title">
+			<h2> Télécharge ton dataframe : </h2>
+		</div>
+
+            <form action='/stat' method=post enctype=multipart/form-data>
+                <input type=file name='file'>
+                <input type=submit>
+            </form>
+
+            <div class="block-title">
+			<h2>Tu trouveras ci-dessous la description de ce fichier après l'avoir téléchargé : </h2>
+		</div>
+
+				{% for table in tables %}
+            		{{ table|safe }}
+            	{% endfor %}
+				
+			</div>
+        </div>
+
+			<footer class="site-footer clearfix">
+                <div class="footer-copyrights">
+                    <p><a href="{{ url_for('home') }}">Retour à l'accueil</a></p>
+                </div>
+            </footer>
+        
+</body>
+	
+</html>
+
+
+
